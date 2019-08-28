@@ -2,7 +2,7 @@
 typescript playground
 
 #compile Typescript to Javascript:
-#tsc filename.ts
+tsc filename.ts
 
 #run Javascript file:
-#node filename.js
+node filename.js
