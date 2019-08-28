@@ -1,8 +1,8 @@
 # TypescriptTest
 typescript playground
 
-#compile Typescript to Javascript
-tsc filename.ts
+#compile Typescript to Javascript:
+#tsc filename.ts
 
-#run Javascript file
-node filename.js
+#run Javascript file:
+#node filename.js
