@@ -105,3 +105,13 @@ let finalValue = 30;
 if (typeof finalValue == "number") {
     console.log("Final value is a number");
 }
+
+//Arrow functions
+console.log("ARROW FUNCTION");
+const addNumbers = function(num1: number, num2: number): number {
+    return num1 + num2;
+};
+console.log(addNumbers(10,3));
+
+const multiplyNumbers = (number1: number, number2: number) => number1 * number2;
+console.log(multiplyNumbers(10,3));
