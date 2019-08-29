@@ -102,10 +102,13 @@ greetFriend("Manu");
 console.log("Default Parameters");
 var countdown = function (start) {
     while (start > 0) {
-        start--;
         console.log(start);
+        start--;
     }
     console.log("Done!", start);
 };
 countdown(10);
-//# sourceMappingURL=app.js.map
+//Rest & Spread
+console.log("Rest & Spread");
+var numbers = [1, 10, 99, -5, 8];
+console.log(Math.max.apply(Math, numbers));
