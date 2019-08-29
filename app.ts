@@ -115,3 +115,23 @@ console.log(addNumbers(10,3));
 
 const multiplyNumbers = (number1: number, number2: number) => number1 * number2;
 console.log(multiplyNumbers(10,3));
+
+//without argument
+const greet= () => {
+    console.log("Hello");
+} 
+greet();
+
+const greetFriend = friend => console.log(friend);
+greetFriend("Manu");
+
+//Default Parameters
+console.log("Default Parameters");
+const countdown = (start: number) => {
+    while (start > 0) {
+        console.log(start);
+        start--;
+    }
+    console.log("Done!", start);
+}
+countdown(10);
