@@ -1,41 +1,50 @@
+/*
 // string
-var myName = 'Max';
+let myName: string = 'Max';
 // myName = 28;
+
 // number
-var myAge = 27;
+let myAge: number = 27;
 // myAge = 'Max';
+
 // boolean
-var hasHobbies = false;
+let hasHobbies: boolean = false;
 // hasHobbies = 1;
+
 // assign types
-var myRealAge;
+let myRealAge: number;
 myRealAge = 27;
 // myRealAge = '27';
+
 // array
-var hobbies = ["Cooking", "Sports"];
+let hobbies: any[] = ["Cooking", "Sports"];
 hobbies = [100];
 // hobbies = 100;
+
 // tuples
-var address = ["Superstreet", 99];
+let address: [string, number] = ["Superstreet", 99];
+
 // enum
-var Color;
-(function (Color) {
-    Color[Color["Gray"] = 0] = "Gray";
-    Color[Color["Green"] = 100] = "Green";
-    Color[Color["Blue"] = 2] = "Blue"; // 2
-})(Color || (Color = {}));
-var myColor = Color.Blue;
+enum Color {
+    Gray, // 0
+    Green = 100, // 100
+    Blue = 2// 2
+}
+let myColor: Color = Color.Blue;
 console.log(myColor);
+
 // any
-var car = "BMW";
+let car: any = "BMW";
 console.log(car);
-car = { brand: "BMW", series: 3 };
+car = { brand: "BMW", series: 3};
 console.log(car);
+
 // functions
-function returnMyName() {
+function returnMyName(): string {
     return myName;
 }
 console.log(returnMyName());
+*/
 // void
 function sayHello() {
     console.log("Hello!");
@@ -111,4 +120,48 @@ countdown(10);
 //Rest & Spread
 console.log("Rest & Spread");
 var numbers = [1, 10, 99, -5, 8];
-console.log(Math.max.apply(Math, numbers));
+console.log(Math.max.apply(Math, numbers)); //... == spread number array
+function makeArray(name) {
+    var args = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        args[_i - 1] = arguments[_i];
+    }
+    return args;
+}
+console.log(makeArray("Max", 1, 2, 3, 6));
+/*
+Rest Parameters & Tuples
+Since TypeScript 3, you can also use tuples as types for rest expressions.
+For example, these two function signatures are equal:
+*/
+console.log("Rest Parameters & Tuples");
+function printInfo(name, age) {
+    console.log('My name is ' + name + ' and I am ' + age + ' years old!');
+}
+console.log(printInfo("Jen", 26));
+function printInfo2() {
+    var info = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        info[_i] = arguments[_i];
+    }
+    console.log('My name is ' + info[0] + ' and I am ' + info[1] + ' years old!');
+}
+console.log(printInfo("Jen", 27));
+//Destructuring
+console.log("Destructuring");
+var myHobbies = ["cooking", "sports"];
+var hobby1 = myHobbies[0], hobby2 = myHobbies[1];
+console.log(hobby1, hobby2);
+var userMax = {
+    userName: "Max",
+    userAge: 27
+};
+//destructuring an object
+var userName = userMax.userName, userAge = userMax.userAge;
+console.log(userName, userAge);
+//const {userName: myName, userAge:myAge} = userMax;
+//console.log(myName, myAge);
+//Template Literals
+var userName_ = "Max";
+var greeting = "This is a heading!\nI'm " + userName_ + ", I am cool :)";
+console.log(greeting);

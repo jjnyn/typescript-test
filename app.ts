@@ -1,3 +1,4 @@
+/*
 // string
 let myName: string = 'Max';
 // myName = 28;
@@ -117,10 +118,10 @@ const multiplyNumbers = (number1: number, number2: number) => number1 * number2;
 console.log(multiplyNumbers(10,3));
 
 //without argument
-const greet= () => {
+const greet_= () => {
     console.log("Hello");
 } 
-greet();
+greet_();
 
 const greetFriend = friend => console.log(friend);
 greetFriend("Manu");
@@ -138,5 +139,54 @@ countdown(10);
 
 //Rest & Spread
 console.log("Rest & Spread");
-const numbers = [1, 10, 99, -5, 8];
-console.log(Math.max(...numbers));
+const numbers_ = [1, 10, 99, -5, 8];
+console.log(Math.max(...numbers_)); //... == spread number array
+
+function makeArray(name: string, ...args: number[]) {
+    return args;
+}
+console.log(makeArray("Max",1,2,3,6));
+
+/*
+Rest Parameters & Tuples
+Since TypeScript 3, you can also use tuples as types for rest expressions.
+For example, these two function signatures are equal:
+
+console.log("Rest Parameters & Tuples");
+
+function printInfo(name: string, age: number) {
+    console.log('My name is ' + name + ' and I am ' + age + ' years old!');
+}
+console.log(printInfo("Jen",26));
+
+function printInfo2(...info: [string, number]) {
+    console.log('My name is ' + info[0] + ' and I am ' + info[1] + ' years old!');
+}
+console.log(printInfo("Jen",27));
+
+//Destructuring
+console.log("Destructuring");
+const myHobbies = ["cooking","sports"];
+const [hobby1,hobby2] = myHobbies;
+console.log(hobby1,hobby2);
+
+const userMax = { //object
+    userName: "Max",
+    userAge: 27
+} 
+//destructuring an object
+const {userName, userAge} = userMax;
+console.log(userName, userAge);
+//const {userName: myName, userAge:myAge} = userMax;
+//console.log(myName, myAge);
+
+//Template Literals
+const userName_ = "Max";
+const greeting = `This is a heading!
+I'm ${userName_}, I am cool :)`;
+console.log(greeting);
+*/
+
+
+
+
