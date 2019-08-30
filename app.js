@@ -185,31 +185,37 @@ const userName_ = "Max";
 const greeting = `This is a heading!
 I'm ${userName_}, I am cool :)`;
 console.log(greeting);
-*/
+
 class Person {
-    constructor(name, username) {
-        this.name = name;
-        this.username = username;
-        this.age = 27;
+    //name: string;
+    private type: string;
+    protected age: number = 27;
+
+    constructor(public name: string, public username: string){
         //this.name = name;
     }
-    printAge() {
+
+    printAge(){
         console.log(this.age);
     }
-    setType(type) {
+
+    setType(type: string){
         this.type = type;
         console.log(this.type);
     }
 }
-const person = new Person("Max", "max");
+
+const person = new Person("Max","max");
 console.log(person.name, person.username);
 person.printAge();
 person.setType("cool guy");
+
 //Inheritance //"extends" keyword
 class Max extends Person {
     //name = "Max";
-    constructor(username) {
-        super("Max", username); //super: call the root 
+
+    constructor(username: string) {
+        super("Max",username); //super: call the root
         this.age = 31; //refer to root class Person; protected type can be accessed from sub-items
         //console.lot(this.type); //type is private, not accessible here
     }
@@ -217,26 +223,36 @@ class Max extends Person {
 //const max = new Max("Anna", "max"); //extends function will overwrite this value, will print Max but Anna
 const max = new Max("max"); //constructor already called name, only have to pass username value = "max"
 console.log(max);
+
 //Getters & Setters
 class Plant {
-    constructor() {
-        this._species = "Default";
-    }
+    private _species: string = "Default";
+
     get species() {
         return this._species;
     }
-    set species(value) {
+    set species(value: string){
         if (value.length > 3) {
             this._species = value;
-        }
-        else {
+        } else {
             this._species = "Default";
         }
     }
 }
+
 let plant = new Plant();
 console.log(plant.species);
 plant.species = "AB";
 console.log(plant.species);
 plant.species = "Green Plant";
 console.log(plant.species);
+*/
+//Static Properties & Methods
+class Helpers {
+    static calcCircumference(diameter) {
+        return this.PI * diameter;
+    }
+}
+Helpers.PI = 3.14;
+console.log(2 * Helpers.PI);
+console.log(Helpers.calcCircumference(8));
