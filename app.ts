@@ -246,3 +246,4 @@ console.log(plant.species);
 plant.species = "AB";
 console.log(plant.species);
 plant.species = "Green Plant";
+console.log(plant.species);
