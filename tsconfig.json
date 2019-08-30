@@ -6,6 +6,9 @@
     "sourceMap": true,
     //"outFile": ""
   },
+  "include": [
+    "app.ts"
+  ],
   "exclude": [
     "node_modules"
   ]
