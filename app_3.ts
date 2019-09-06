@@ -1,4 +1,5 @@
 import * as Circle from "./math/circle";
+//import { Component } from "@angular.core";
 import calc from "./math/rectangle";
 
 console.log(Circle.PI);
