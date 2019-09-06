@@ -247,31 +247,53 @@ console.log(plant.species);
 plant.species = "Green Plant";
 console.log(plant.species);
 */
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 //Static Properties & Methods
-class Helpers {
-    static calcCircumference(diameter) {
-        return this.PI * diameter;
+var Helpers = /** @class */ (function () {
+    function Helpers() {
     }
-}
-Helpers.PI = 3.14;
+    Helpers.calcCircumference = function (diameter) {
+        return this.PI * diameter;
+    };
+    Helpers.PI = 3.14;
+    return Helpers;
+}());
 console.log(2 * Helpers.PI);
 console.log(Helpers.calcCircumference(8));
 //Abstract classes
-class Project {
-    constructor() {
+var Project = /** @class */ (function () {
+    function Project() {
         this.projectName = "Default";
         this.budget = 1000;
     }
-    calcBudget() {
+    Project.prototype.calcBudget = function () {
         return this.budget * 2;
+    };
+    return Project;
+}());
+var ITProject = /** @class */ (function (_super) {
+    __extends(ITProject, _super);
+    function ITProject() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-}
-class ITProject extends Project {
-    changeName(name) {
+    ITProject.prototype.changeName = function (name) {
         this.projectName = name;
-    }
-}
-let newProject = new ITProject();
+    };
+    return ITProject;
+}(Project));
+var newProject = new ITProject();
 console.log(newProject);
 newProject.changeName("Super IT Project");
 console.log(newProject);
