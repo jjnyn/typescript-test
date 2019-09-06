@@ -1,6 +1,6 @@
 var MyMath;
 (function (MyMath) {
-    const PI = 3.14;
+    var PI = 3.14;
     function calculateCircumference(diameter) {
         return diameter * PI;
     }
