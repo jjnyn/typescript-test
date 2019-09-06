@@ -275,3 +275,4 @@ let newProject = new ITProject();
 console.log(newProject);
 newProject.changeName("Super IT Project");
 console.log(newProject);
+//# sourceMappingURL=app.js.map
