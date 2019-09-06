@@ -1,10 +1,11 @@
-# TypescriptTest
-typescript playground
+## TypescriptTest
 
-#compile Typescript to Javascript:
+## compile Typescript to Javascript:
 `tsc filename.ts`
+
 `tsc --target ES2016 filename.ts`
+
 `tsc filename.ts -t ES5`
 
-#run Javascript file:
+## run Javascript file:
 `node filename.js`
