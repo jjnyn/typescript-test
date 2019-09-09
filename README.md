@@ -9,3 +9,6 @@
 
 ## run Javascript file:
 `node filename.js`
+
+## Course Status
+`Section 10`
