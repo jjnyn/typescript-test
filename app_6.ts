@@ -35,8 +35,9 @@ const plant = new Plant();
  (<any>plant).print();
 
  // Method Decorator
+ //Property decorator
  function editable(value: boolean) {
-     return function(target: any, propName: string, descriptor: PropertyDecorator) {
+     return function(target: any, propName: string, descriptor: PropertyDescriptor) {
         descriptor.writable = value;
      }
  }

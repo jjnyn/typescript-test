@@ -48,6 +48,7 @@ var Plant = /** @class */ (function () {
 var plant = new Plant();
 plant.print();
 // Method Decorator
+//Property decorator
 function editable(value) {
     return function (target, propName, descriptor) {
         descriptor.writable = value;
