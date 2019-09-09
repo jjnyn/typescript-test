@@ -14,9 +14,18 @@
   "author": "Maximilian Schwarzmueller",
   "license": "MIT",
   "devDependencies": {
+    "@types/jquery": "^3.3.31",
     "lite-server": "^2.2.2"
   },
   "dependencies": {
     "systemjs": "^0.21.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jyuan1993/TypescriptTest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jyuan1993/TypescriptTest/issues"
+  },
+  "homepage": "https://github.com/jyuan1993/TypescriptTest#readme"
 }
