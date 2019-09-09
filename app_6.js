@@ -39,9 +39,35 @@ var Plant = /** @class */ (function () {
         this.name = "Green Plant";
     }
     Plant = __decorate([
+        logging(true) // multiple decorator
+        ,
         printable
     ], Plant);
     return Plant;
 }());
 var plant = new Plant();
 plant.print();
+// Method Decorator
+function editable(value) {
+    return function (target, propName, descriptor) {
+        descriptor.writable = value;
+    };
+}
+var Project = /** @class */ (function () {
+    function Project(name) {
+        this.projectName = name;
+    }
+    Project.prototype.calcBudget = function () {
+        console.log(1000);
+    };
+    __decorate([
+        editable(false)
+    ], Project.prototype, "calcBudget");
+    return Project;
+}());
+var project = new Project("Super Project");
+project.calcBudget();
+project.calcBudget = function () {
+    console.log(2000);
+};
+project.calcBudget();
