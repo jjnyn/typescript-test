@@ -42,7 +42,17 @@ const plant = new Plant();
      }
  }
 
+ function overwritable(value: boolean){
+    return function(target: any, propName: string): any {
+        const newDescriptor: PropertyDescriptor = {
+            writable: value
+        };
+        return newDescriptor;
+    }
+ }
+
  class Project {
+     @overwritable(false)
      projectName: string;
 
      constructor(name: string) {
