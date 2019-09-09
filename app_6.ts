@@ -26,6 +26,8 @@ function printable(constructorFn: Function) {
     }
 }
 
+// multiple decorator
+@logging(true)
 @printable
 class Plant {
     name = "Green Plant";
